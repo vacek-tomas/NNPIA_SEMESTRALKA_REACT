@@ -1,11 +1,10 @@
 import axios from 'axios';
-import config from '../infrastucture/config';
 import {AuthenticationController_generateToken} from '../infrastucture/ApiRoutes';
 
 class AuthService {
 
     login(credentials){
-        return axios.post(config.API_BASE_URL + AuthenticationController_generateToken, credentials);
+        return axios.post(process.env.REACT_APP_URL + AuthenticationController_generateToken, credentials);
     }
 
     getUserInfo(){
